@@ -6,44 +6,59 @@ from EnterEmail import EnterEmail
 from TweetAtweet import TweetAtweet
 from Profile import ProfileTest
 from SearchBar import SearchBar
+from EnterUserName import EnterUserName
+from EnterPassword import EnterPassword
+from Register import Register
+from NavBar import NavBar
+from TweetComp import TweetComp
+
 Driver = webdriver.Chrome(ChromeDriverManager().install()) # uses google chrome
+
+##########Register(Driver)  # Registers using the default testing mode
+#Register(Driver, 1)  # Registers using the default testing mode
+#Register(Driver, 0)  # Registers using the focused testing mode
+
+
+
 Driver.get('https://twitter.com/i/flow/login')
 time.sleep(3)
 
-EnterEmail(Driver)  # Entes the email, using the default testing mode
-# Email = "ultimatehacker925@yahoo.com"
-#
-# LoginField = Driver.find_element(by=By.XPATH, value=
-#     '/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[5]/label/div/div[2]/div/input')
-# NextButton = Driver.find_element(by=By.XPATH, value=
-#     '/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[6]')
-# time.sleep(3)
-# LoginField.send_keys(Email) # Writes the email in the loginField
-# time.sleep(2)
-# NextButton.click()
-# time.sleep(3)
-time.sleep(3)
-Username = 'ProHackarz'
-UsernameField = Driver.find_element(by=By.XPATH, value=
-    '/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div[2]/label/div/div[2]/div/input')
-NextButton = Driver.find_element(by=By.XPATH, value=
-    '/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div/div')
-UsernameField.send_keys(Username)
-time.sleep(2)
-NextButton.click()
+
+EnterEmail(Driver)  # Enters the email, using the default testing mode
+#EnterEmail(Driver, 1)  # Enters the email, using the default testing mode
+#EnterEmail(Driver, 0)  # Enters the email, using the focused testing mode
 time.sleep(3)
 
-Password = 'passwordsa3ba'
-PasswordField = Driver.find_element(by=By.XPATH, value=
-    '/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[3]/div/label/div/div[2]/div[1]/input')
-LoginButton = Driver.find_element(by=By.XPATH, value=
-    '/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div')
-PasswordField.send_keys(Password)
-time.sleep(2)
-LoginButton.click()
+EnterUserName(Driver)       # Enters the username using the default testing mode
+#EnterUserName(Driver, 1)  # Enters the UserName using the default testing mode
+#EnterUserName(Driver, 0)  # Enters the UserName using the focused testing mode
 time.sleep(3)
 
-#TweetAtweet(Driver)
-#ProfileTest(Driver)
-SearchBar(Driver)
+
+EnterPassword(Driver)       # Enters the password using the default testing mode
+#EnterPassword(Driver, 1)  # Enters the Password using the default testing mode
+#EnterPassword(Driver, 0)  # Enters the Password using the focused testing mode
+time.sleep(3)
+
+#NavBar(Driver)             # Tests the Navigation Bar
+time.sleep(3)
+
+TweetComp(Driver)           # Tests basic tweet components
+time.sleep(3)
+
+
+#TweetAtweet(Driver)        # Tweets some tweets
+time.sleep(3)
+
+#ProfileTest(Driver)        # Tests profile page
+time.sleep(3)
+
+SearchBar(Driver)           # Tests Search Bar
 time.sleep(5)
+
+
+
+
+
+
+

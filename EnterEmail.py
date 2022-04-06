@@ -15,9 +15,10 @@ def EnterEmail(Driver, Mode = 1):
         F = open('EmailTestCases.txt', 'r')
         Emails = [Email.rstrip('\n') for Email in F.readlines()] # Makes a list containing all email test cases
         F.close()
-        print("Mode 0: \n")
-        print(Emails)
+        #print("Mode 0: \n")
+        #print(Emails)
         for Email in Emails:
+            print("Email: ", Email)
             # Locates the email field, and the next button
             LoginField = Driver.find_element(by=By.XPATH, value=
             '/html/body/div/div/div/div[1]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/div[5]/label/div/div[2]/div/input')
@@ -38,8 +39,8 @@ def EnterEmail(Driver, Mode = 1):
         F = open('EmailTestCases.txt', 'r')
         Email = (F.readline()).rstrip('\n')   # Email now equals the first element in the file
         F.close()
-        print("Mode 1: \n")
-        print(Email)
+        #print("Mode 1: \n")
+        #print(Email)
 
         # Locates the email field, and the next button
         LoginField = Driver.find_element(by=By.XPATH, value=
