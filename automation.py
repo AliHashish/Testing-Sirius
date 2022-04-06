@@ -40,20 +40,19 @@ EnterPassword(Driver)       # Enters the password using the default testing mode
 #EnterPassword(Driver, 0)  # Enters the Password using the focused testing mode
 time.sleep(3)
 
-#NavBar(Driver)             # Tests the Navigation Bar
+ProfileTest(Driver)        # Tests profile page
+time.sleep(3)
+
+SearchBar(Driver)           # Tests Search Bar
+time.sleep(3)
+
+NavBar(Driver)             # Tests the Navigation Bar
 time.sleep(3)
 
 TweetComp(Driver)           # Tests basic tweet components
 time.sleep(3)
 
-
-#TweetAtweet(Driver)        # Tweets some tweets
-time.sleep(3)
-
-#ProfileTest(Driver)        # Tests profile page
-time.sleep(3)
-
-SearchBar(Driver)           # Tests Search Bar
+TweetAtweet(Driver)        # Tweets some tweets
 time.sleep(5)
 
 
