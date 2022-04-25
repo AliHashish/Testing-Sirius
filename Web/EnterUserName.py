@@ -13,7 +13,7 @@ def EnterUserName(Driver, Mode = 1):
     # The default is testing the whole process
 
     if Mode == 0: # Mainly focuses on testing usernames
-        F = open('UserNameTestCases.txt', 'r')
+        F = open('../TestCases/UserNameTestCases.txt', 'r')
         UserNames = [UserName.rstrip('\n') for UserName in F.readlines()] # Makes a list containing all username test cases
         F.close()
         #print("Mode 0: \n")
@@ -38,7 +38,7 @@ def EnterUserName(Driver, Mode = 1):
             EnterEmail(Driver)  # Entes the email, using the default testing mode
 
     else: # Mainly focuses on testing the whole process
-        F = open('UserNameTestCases.txt', 'r')
+        F = open('../TestCases/UserNameTestCases.txt', 'r')
         UserName = (F.readline()).rstrip('\n')   # UserName now equals the first element in the file
         F.close()
         #print("Mode 1: \n")

@@ -14,7 +14,7 @@ def EnterPassword(Driver, Mode = 1):
     # The default is testing the whole process
 
     if Mode == 0: # Mainly focuses on testing Passwords
-        F = open('PasswordTestCases.txt', 'r')
+        F = open('../TestCases/PasswordTestCases.txt', 'r')
         Passwords = [Password.rstrip('\n') for Password in F.readlines()] # Makes a list containing all Password test cases
         F.close()
         #print("Mode 0: \n")
@@ -43,7 +43,7 @@ def EnterPassword(Driver, Mode = 1):
             time.sleep(3)
 
     else: # Mainly focuses on testing the whole process
-        F = open('PasswordTestCases.txt', 'r')
+        F = open('../TestCases/PasswordTestCases.txt', 'r')
         Password = (F.readline()).rstrip('\n')   # Password now equals the first element in the file
         F.close()
         #print("Mode 1: \n")

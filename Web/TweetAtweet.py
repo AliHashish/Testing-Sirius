@@ -7,7 +7,7 @@ def TweetAtweet(Driver):
     #simillarly like Function of Enter emails 
     #but with no modes given text file containg cases of different tweets 
     #it is going to run them down
-    F = open('TweetTestCases.txt' , 'r')
+    F = open('../TestCases/TweetTestCases.txt' , 'r')
     Quotes = [tweet.rstrip('\n') for tweet in F.readlines()]
     F.close()
     time.sleep(2)

@@ -12,7 +12,7 @@ def EnterEmail(Driver, Mode = 1):
     # The default is testing the whole process
 
     if Mode == 0: # Mainly focuses on testing emails
-        F = open('EmailTestCases.txt', 'r')
+        F = open('../TestCases/EmailTestCases.txt', 'r')
         Emails = [Email.rstrip('\n') for Email in F.readlines()] # Makes a list containing all email test cases
         F.close()
         #print("Mode 0: \n")
@@ -36,7 +36,7 @@ def EnterEmail(Driver, Mode = 1):
             time.sleep(3)
 
     else: # Mainly focuses on testing the whole process
-        F = open('EmailTestCases.txt', 'r')
+        F = open('../TestCases/EmailTestCases.txt', 'r')
         Email = (F.readline()).rstrip('\n')   # Email now equals the first element in the file
         F.close()
         #print("Mode 1: \n")

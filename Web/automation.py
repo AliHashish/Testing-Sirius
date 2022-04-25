@@ -29,7 +29,7 @@ EnterEmail(Driver)  # Enters the email, using the default testing mode
 #EnterEmail(Driver, 0)  # Enters the email, using the focused testing mode
 time.sleep(3)
 
-EnterUserName(Driver)       # Enters the username using the default testing mode
+#EnterUserName(Driver)       # Enters the username using the default testing mode
 #EnterUserName(Driver, 1)  # Enters the UserName using the default testing mode
 #EnterUserName(Driver, 0)  # Enters the UserName using the focused testing mode
 time.sleep(3)

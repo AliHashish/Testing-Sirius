@@ -20,11 +20,11 @@ def Register(Driver, Mode = 1):
     # The default is testing the whole process
 
     if Mode == 0: # Mainly focuses on testing Names
-        F = open('UserNameTestCases.txt', 'r')
+        F = open('../TestCases/UserNameTestCases.txt', 'r')
         Names = [Name.rstrip('\n') for Name in F.readlines()] # Makes a list containing all Name test cases
         F.close()
 
-        F = open('PhoneTestCases.txt', 'r')
+        F = open('../TestCases/PhoneTestCases.txt', 'r')
         Phones = [Phone.rstrip('\n') for Phone in F.readlines()]  # Makes a list containing all Phone test cases
         F.close()
 
@@ -82,11 +82,11 @@ def Register(Driver, Mode = 1):
                 time.sleep(3)
 
     else: # Mainly focuses on testing the whole process
-        F = open('UserNameTestCases.txt', 'r')
+        F = open('../TestCases/UserNameTestCases.txt', 'r')
         Name = (F.readline()).rstrip('\n')   # Name now equals the first element in the file
         F.close()
 
-        F = open('PhoneTestCases.txt', 'r')
+        F = open('../TestCases/PhoneTestCases.txt', 'r')
         Phone = (F.readline()).rstrip('\n')  # Phone now equals the first element in the file
         F.close()
 
