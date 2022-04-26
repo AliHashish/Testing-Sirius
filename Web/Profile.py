@@ -2,7 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 from selenium.webdriver.common.by import By
-import keyboard
+# import keyboard
 from pyautogui import *
 import pyautogui
 
@@ -16,6 +16,9 @@ def ProfileTest(Driver):
     # ProfileIcon.click()
     # time.sleep(3)
     ###NEW
+    Driver.get('http://34.236.108.123/profile')
+    time.sleep(1)
+
     FollowButton = Driver.find_element(by=By.XPATH, value='/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button[3]') #FOR SIRIUS FOLLOW BUTTON
     time.sleep(1)
     FollowButton.click()
@@ -68,7 +71,7 @@ def ProfileTest(Driver):
     FollowingTab.click()
     time.sleep(3)
     # Backbutton.click()
-    Driver.get('http://18.209.57.66/profile') #doesnt want to click on back button even though it is implemented correctly by FT
+    Driver.get('http://34.236.108.123/profile') #doesnt want to click on back button even though it is implemented correctly by FT
     time.sleep(3)
     Followers = Driver.find_element(by=By.XPATH,value = '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[2]/span')
     Followers.click()
@@ -81,7 +84,7 @@ def ProfileTest(Driver):
     FollowersTab2.click()
     time.sleep(2)
     # Backbutton.click()
-    Driver.get('http://18.209.57.66/profile')  # doesnt want to click on back button even though it is implemented correctly by FT
+    Driver.get('http://34.236.108.123/profile')  # doesnt want to click on back button even though it is implemented correctly by FT
     time.sleep(2)
     ##Notification Bell
     NotificationBell = Driver.find_element(by=By.XPATH,value = '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button[2]')

@@ -6,10 +6,10 @@ from SignIn import SignIn
 from NavBar import NavBar
 from Notifications import Notifications
 from Bookmarks import Bookmarks
+from Profile import ProfileTest
 
 
 from TweetAtweet import TweetAtweet
-from Profile import ProfileTest
 from SearchBar import SearchBar
 from Register import Register
 from TweetComp import TweetComp
@@ -37,12 +37,15 @@ NavBar(Driver)             # Tests the Navigation Bar
 
 
 
+
 time.sleep(1)
 Notifications(Driver)
 
 time.sleep(1)
 Bookmarks(Driver)
 
+time.sleep(1)
+ProfileTest(Driver)
 
 
 #
