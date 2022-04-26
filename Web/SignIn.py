@@ -96,3 +96,4 @@ def SignIn(Driver, Mode = 1):
         PasswordField.send_keys(Password)  # Writes the password in the password field
         time.sleep(3)
         LoginButton.click()
+        time.sleep(2)
