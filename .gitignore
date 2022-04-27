@@ -35,3 +35,4 @@ __pycache__/EnterUserName.cpython-38.pyc
 __pycache__/NavBar.cpython-38.pyc
 __pycache__/Register.cpython-38.pyc
 __pycache__/TweetComp.cpython-38.pyc
+*.pyc

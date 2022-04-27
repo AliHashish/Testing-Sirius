@@ -98,29 +98,30 @@ def InteractiveIcons(Driver):
     Options.click()
     time.sleep(1)
 
-    Follow = Driver.find_element(by=By.XPATH, value=
+    Delete = Driver.find_element(by=By.XPATH, value=
     '/html/body/div[2]/div[3]/div/p[1]')
+    #/html/body/div[2]/div[3]/div/p[1]/div
     time.sleep(1)
-    Follow.click()
+    Delete.click()
     time.sleep(1)
 
-    Block = Driver.find_element(by=By.XPATH, value=
+    Pin = Driver.find_element(by=By.XPATH, value=
     '/html/body/div[2]/div[3]/div/p[2]')
     time.sleep(1)
-    Block.click()
+    Pin.click()
     time.sleep(1)
 
-    Report = Driver.find_element(by=By.XPATH, value=
-    '/html/body/div[2]/div[3]/div/p[3]')
-    time.sleep(1)
-    Report.click()
-    time.sleep(1)
-
-    Mute = Driver.find_element(by=By.XPATH, value=
-    '/html/body/div[2]/div[3]/div/p[4]')
-    time.sleep(1)
-    Mute.click()
-    time.sleep(1)
+    # Report = Driver.find_element(by=By.XPATH, value=
+    # '/html/body/div[2]/div[3]/div/p[3]')
+    # time.sleep(1)
+    # Report.click()
+    # time.sleep(1)
+    #
+    # Mute = Driver.find_element(by=By.XPATH, value=
+    # '/html/body/div[2]/div[3]/div/p[4]')
+    # time.sleep(1)
+    # Mute.click()
+    # time.sleep(1)
 
     Driver.get('http://34.236.108.123/home')
     time.sleep(3)

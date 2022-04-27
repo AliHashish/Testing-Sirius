@@ -13,14 +13,15 @@ from TweetComp import TweetComp
 from TweetCompPoll import TweetCompPoll
 from TweetCompSchedule import TweetCompSchedule
 from InteractiveIcons import InteractiveIcons
-
-
-
-
-
-
-
 from TweetAtweet import TweetAtweet
+from InfiniteScroll import InfiniteScroll
+
+
+
+
+
+
+
 from SearchBar import SearchBar
 from Register import Register
 
@@ -48,7 +49,7 @@ SignIn(Driver)  # Signs in using the default testing mode
 # SignIn(Driver, 1)  # Signs in using the default testing mode
 # SignIn(Driver, 0)  # Signs in using the focused testing mode
 
-
+InfiniteScroll(Driver)
 
 # Driver = webdriver.Firefox(executable_path=r'..\..\..\gecko\geckodriver.exe')
 # Driver.get('http://34.236.108.123/adminView/dashboard')  # Goes to Admin page
@@ -72,6 +73,11 @@ Driver.get('http://34.236.108.123/profile')
 time.sleep(1)
 NavBar(Driver)             # Tests the Navigation Bar
 
+
+time.sleep(1)
+TweetAtweet(Driver)        # Tweets some tweets
+# TweetAtweet(Driver, 1)   # Tweets using the default testing mode
+# TweetAtweet(Driver, 0)   # Tweets using the focused testing mode
 
 time.sleep(1)
 Notifications(Driver)
@@ -124,9 +130,7 @@ InteractiveIcons(Driver)
 
 
 
-#
-# TweetAtweet(Driver)        # Tweets some tweets
-# time.sleep(5)
+
 
 
 # SearchBar(Driver)           # Tests Search Bar

@@ -9,6 +9,10 @@ def TweetAtweet(Driver, Mode= 1):
     #simillarly like Function of Enter emails 
     #but with no modes given text file containg cases of different tweets 
     #it is going to run them down
+
+    Driver.get('http://34.236.108.123/home')
+    time.sleep(3)
+
     i = 1
     if Mode == 0:
         F = open('../TestCases/TweetTestCases.txt' , 'r')
