@@ -15,13 +15,7 @@ from TweetCompSchedule import TweetCompSchedule
 from InteractiveIcons import InteractiveIcons
 from TweetAtweet import TweetAtweet
 from InfiniteScroll import InfiniteScroll
-
-
-
-
-
-
-
+from Utilities import *     # imports all utility functions
 from SearchBar import SearchBar
 from Register import Register
 
