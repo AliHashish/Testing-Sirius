@@ -1,3 +1,4 @@
+import self as self
 from appium import webdriver
 from AndroidTweeting import AndroidTweeting
 from Interactable import Buttons
@@ -23,5 +24,15 @@ driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", DesiredCapabilities)
 #first run the program then start the test
 ##login step
 ##tweet at home step
-AndroidTweeting(driver) #tweeting a tweet DONE
-Buttons(driver)
+
+# AndroidTweeting(driver) #tweeting a tweet DONE
+# Buttons(driver)
+
+
+#very importanttttt
+# Next = driver.find_element(by=By.XPATH,value='//android.view.View[@content-desc="Notifications Select the kinds of notifications you get about your activities,interests and recommendations"]').click()
+# action = TouchAction(driver)
+# action.long_press(Next,2000)
+# action.press()
+# time.sleep(3)
+######
