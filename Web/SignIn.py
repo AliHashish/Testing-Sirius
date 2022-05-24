@@ -2,7 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 from selenium.webdriver.common.by import By
-
+from Utilities import *
 
 
 # Enters Email and password, then presses next
@@ -12,8 +12,9 @@ def SignIn(Driver, Mode = 1):
     # if Mode = 1, then we will test the whole process with a specific element
     # namely, the first element
 
-    Driver.get('http://34.236.108.123/signinredirect')  # Goes to sign in page
+    Driver.get('http://mysirius.me/signin')  # Goes to sign in page
     time.sleep(2)
+
     # The default is testing the whole process
 
     if Mode == 0: # Mainly focuses on testing email and password combinations
@@ -31,7 +32,6 @@ def SignIn(Driver, Mode = 1):
         for Email in Emails:
             for Password in Passwords:
 
-
                 # Locates the email field, password field, and the login button
                 for i in range(2):  # uses same email and password twice, but shows password in one of them
                     counter += 1
@@ -39,33 +39,34 @@ def SignIn(Driver, Mode = 1):
                     print("Email: ", Email)
                     print("Password: ", Password)
                     print("")
-                    EmailField = Driver.find_element(by=By.XPATH, value=
-                    '/html/body/div/div/div/div/form/input[1]')
 
-                    PasswordField = Driver.find_element(by=By.XPATH, value=
-                    '/html/body/div/div/div/div/form/input[2]')
-
-                    LoginButton = Driver.find_element(by=By.XPATH, value=
-                    '/html/body/div/div/div/div/form/button[3]')
-
-                    # time.sleep(1)
-                    ShowPassword = Driver.find_element(by=By.XPATH, value=
-                    '/html/body/div/div/div/div/form/span/i')
+                    # EmailField = Driver.find_element(by=By.XPATH, value=
+                    # '/html/body/div/div/div/div/form/input[1]')
+                    #
+                    # PasswordField = Driver.find_element(by=By.XPATH, value=
+                    # '/html/body/div/div/div/div/form/input[2]')
+                    #
+                    # LoginButton = Driver.find_element(by=By.XPATH, value=
+                    # '/html/body/div/div/div/div/form/button[3]')
+                    #
+                    # # time.sleep(1)
+                    # ShowPassword = Driver.find_element(by=By.XPATH, value=
+                    # '/html/body/div/div/div/div/form/span/i')
 
                     if (i%2 == 0):
-                        time.sleep(1)
-                        ShowPassword.click()
+                        time.sleep(2)
+                        ShowPassword = ClickFnHttp(Driver, '/html/body/div/div/div/form/span/i', 2)
 
                     time.sleep(1)
-                    EmailField.send_keys(Email)  # Writes the email in the email field
+                    EmailField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[1]', Email, 2)  # Writes the email in the email field
                     # time.sleep(1)
-                    PasswordField.send_keys(Password)  # Writes the password in the password field
+                    PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 2)  # Writes the password in the password field
                     time.sleep(1)
-                    LoginButton.click()
+                    LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[3]', 2)
 
 
                     time.sleep(2)
-                    Driver.get('http://34.236.108.123/signinredirect')  # Returns to the login page
+                    Driver.get('http://mysirius.me/signin')  # Returns to the login page
                     time.sleep(1)
 
     else: # Mainly focuses on testing the whole process
@@ -81,19 +82,19 @@ def SignIn(Driver, Mode = 1):
         #print(Email)
 
         # Locates the email field, password field and the login button
-        EmailField = Driver.find_element(by=By.XPATH, value=
-        '/html/body/div/div/div/div/form/input[1]')
-
-        PasswordField = Driver.find_element(by=By.XPATH, value=
-        '/html/body/div/div/div/div/form/input[2]')
-
-        LoginButton = Driver.find_element(by=By.XPATH, value=
-        '/html/body/div/div/div/div/form/button[3]')
+        # EmailField = Driver.find_element(by=By.XPATH, value=
+        # '/html/body/div/div/div/div/form/input[1]')
+        #
+        # PasswordField = Driver.find_element(by=By.XPATH, value=
+        # '/html/body/div/div/div/div/form/input[2]')
+        #
+        # LoginButton = Driver.find_element(by=By.XPATH, value=
+        # '/html/body/div/div/div/div/form/button[3]')
 
         time.sleep(1)
-        EmailField.send_keys(Email)  # Writes the email in the email field
+        EmailField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[1]', Email, 2)   # Writes the email in the email field
         time.sleep(1)
-        PasswordField.send_keys(Password)  # Writes the password in the password field
+        PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 2)  # Writes the password in the password field
         time.sleep(3)
-        LoginButton.click()
+        LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[3]', 2)
         time.sleep(2)

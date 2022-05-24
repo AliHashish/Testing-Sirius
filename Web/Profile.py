@@ -6,6 +6,7 @@ from selenium.webdriver.common.by import By
 from pyautogui import *
 import pyautogui
 from Utilities import ClickFnHttp
+from ProfileName import ProfileNames
 #this file has been modified
 
 def ProfileTest(Driver):
@@ -17,8 +18,15 @@ def ProfileTest(Driver):
     # time.sleep(3)
 
     ###NEW
-    Driver.get('http://34.236.108.123/profile')
+    Driver.get('http://mysirius.me/home')
     time.sleep(1)
+    ProfileIcon = ClickFnHttp(Driver, '/html/body/div/div/div/div[1]/div[1]/div/a[6]/div', 2)
+
+    Driver.get('http://mysirius.me/home')
+    time.sleep(1)
+    ProfileIcon = ClickFnHttp(Driver, '/html/body/div/div/div/div[1]/div[1]/div/a[6]/div', 2)
+    time.sleep(2)
+
     # Uncomment this part when you're visiting another user's profile, not your own
     # FollowButton = Driver.find_element(by=By.XPATH, value='/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button[3]') #FOR SIRIUS FOLLOW BUTTON
     # time.sleep(1)
@@ -64,7 +72,7 @@ def ProfileTest(Driver):
     # ####
 
     #Followers list
-    Followings = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[1]/span', 1)
+    Followings = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[1]', 1)
     # Followings = Driver.find_element(by=By.XPATH, value = '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[1]/span')
     # Followings.click()
     # time.sleep(1)
@@ -73,7 +81,7 @@ def ProfileTest(Driver):
     time.sleep(2)
     pyautogui.press("up")
     time.sleep(2)
-
+    # Backbutton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 2)
     # Backbutton = Driver.find_element(by=By.XPATH, value='/html/body/div/div/div/div[2]/div[1]/div[1]/div/a')
     # time.sleep(2)
 
@@ -88,9 +96,9 @@ def ProfileTest(Driver):
     # FollowingTab.click()
     # time.sleep(3)
 
-    #BackButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 1)
+    BackButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 2)
     # Backbutton.click()
-    Driver.get('http://34.236.108.123/profile') #doesnt want to click on back button even though it is implemented correctly by FT
+    Driver.get('http://mysirius.me/profile') #doesnt want to click on back button even though it is implemented correctly by FT
     time.sleep(3)
 
     Followers = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[2]/span', 2)
@@ -109,10 +117,31 @@ def ProfileTest(Driver):
     # FollowersTab2.click()
     # time.sleep(2)
 
-    # BackButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 1)
+    BackButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 1)
     # Backbutton.click()
-    Driver.get('http://34.236.108.123/profile')  # doesnt want to click on back button even though it is implemented correctly by FT
+    Driver.get('http://mysirius.me/profile')  # doesnt want to click on back button even though it is implemented correctly by FT
     time.sleep(2)
+
+    #test unfollow and follow
+    FollowButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[2]/button', 2)
+
+    FollowingTab = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div/div/a[2]/button', 2)
+
+    FollowerTab = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div/div/a[1]/button', 2)
+
+    UnfollowButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[2]/button', 2)
+
+    Cancel = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/button[2]', 2)
+
+    UnfollowButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[2]/button', 2)
+
+    UnfollowConfirmation = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/button[1]', 2)
+
+    FollowingTab = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div/div/a[2]/button', 2)
+
+    FollowerTab = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div/div/a[1]/button', 2)
+
+    BackButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 1)
 
     ##Notification Bell
     #NotificationBell = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button[2]', 1)
@@ -127,21 +156,19 @@ def ProfileTest(Driver):
     # MoreSettingsButton.click()
     # time.sleep(2)
 
+    EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+    pyautogui.press("down")
+    time.sleep(2)
+    pyautogui.press("up")
+    time.sleep(2)
 
-    # EditProfileButton = Driver.find_element_by_xpath('                                           #dont uncomment this
-    #       /html/body/div[1]/div/div/div[2]/main/div/div/div/div/div/div[2]/div/div/div/div/div[1]/div[2]/a')
-    # time.sleep(3)
-    # EditProfileButton.click()
-    # time.sleep(3)
+    Driver.get('http://mysirius.me/profile')
+    time.sleep(2)
 
-    #EditprofileButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div/div[2]/div[3]/button', 2)
-    # EditProfileButton = Driver.find_element_by_xpath('/html/body/div/div/div/div[2]/div/div[2]/div[3]/button')
-    # time.sleep(3)
-    # EditProfileButton.click()
-    # time.sleep(3)
+    ProfileNames(Driver)
+    # ProfileNames(Driver,0)
+    # ProfileNames(Driver,1)
 
-    # CloseButton = ClickFnHttp(Driver, '/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[1]/div', 2)
-    # CloseButton = Driver.find_element_by_xpath('/html/body/div[1]/div/div/div[1]/div[2]/div/div/div/div/div/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div[1]/div')
-    # time.sleep(3)
-    # CloseButton.click()
-    # time.sleep(3)
+
+
+
