@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import Select
 
 
 def TweetCompSchedule(Driver):
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
 
     Schedule = Driver.find_element(by=By.XPATH, value=
@@ -66,7 +66,7 @@ def TweetCompSchedule(Driver):
 
 
 
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
 
     Schedule = Driver.find_element(by=By.XPATH, value=
@@ -111,7 +111,7 @@ def TweetCompSchedule(Driver):
     Am_Pm.select_by_index(0)
     time.sleep(3)
 
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
 
     Schedule = Driver.find_element(by=By.XPATH, value=

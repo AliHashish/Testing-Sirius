@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 
 def TweetComp(Driver):
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
 
     # Media = Driver.find_element(by=By.XPATH, value=
@@ -29,7 +29,7 @@ def TweetComp(Driver):
     time.sleep(1)
     Poll.click()
     time.sleep(1)
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(1)
 
     Schedule = Driver.find_element(by=By.XPATH, value=
@@ -37,7 +37,7 @@ def TweetComp(Driver):
     time.sleep(3)
     Schedule.click()
     time.sleep(3)
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
 
     Emoji = Driver.find_element(by=By.XPATH, value=
@@ -45,7 +45,7 @@ def TweetComp(Driver):
     time.sleep(1)
     Emoji.click()
     time.sleep(1)
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(1)
 
     Poll = Driver.find_element(by=By.XPATH, value=
@@ -75,7 +75,7 @@ def TweetComp(Driver):
     # Note that: after pressing Confirm, the components disappear {BUG}
     # So we need to refresh the page.
 
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(1)
 
 

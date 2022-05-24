@@ -43,7 +43,7 @@ SignIn(Driver)  # Signs in using the default testing mode                       
 # SignIn(Driver, 1)  # Signs in using the default testing mode
 # SignIn(Driver, 0)  # Signs in using the focused testing mode
 
-# InfiniteScroll(Driver)
+InfiniteScroll(Driver)
 
 # Driver = webdriver.Firefox(executable_path=r'..\..\..\gecko\geckodriver.exe')
 # Driver.get('http://34.236.108.123/adminView/dashboard')  # Goes to Admin page
@@ -73,7 +73,7 @@ SignIn(Driver)  # Signs in using the default testing mode                       
 # Bookmarks(Driver)
 
 # time.sleep(1)
-ProfileTest(Driver)         # Tests profile page
+# ProfileTest(Driver)         # Tests profile page
 
 # time.sleep(3)
 # TweetComp(Driver)           # Tests basic tweet components

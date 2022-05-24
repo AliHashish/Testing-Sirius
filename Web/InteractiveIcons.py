@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from Utilities import ClickFnHttp
 
 def InteractiveIcons(Driver):
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
 
     Bookmark =ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[2]/div[2]/span/button[4]',1)
@@ -128,19 +128,21 @@ def InteractiveIcons(Driver):
     # Pin.click()
     # time.sleep(1)
 
+    # Report = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div/p[3]', 1)
     # Report = Driver.find_element(by=By.XPATH, value=
     # '/html/body/div[2]/div[3]/div/p[3]')
     # time.sleep(1)
     # Report.click()
     # time.sleep(1)
-    #
+
+    # Mute = ClickFnHttp(Driver,'/html/body/div[2]/div[3]/div/p[4]', 1)
     # Mute = Driver.find_element(by=By.XPATH, value=
     # '/html/body/div[2]/div[3]/div/p[4]')
     # time.sleep(1)
     # Mute.click()
     # time.sleep(1)
 
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
 
     Tweet = ClickFnHttp(Driver, '/html/body/div/div/div/div[1]/div/button', 1)
@@ -172,7 +174,7 @@ def InteractiveIcons(Driver):
     # Logout.click()
     # time.sleep(1)
 
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
 
     SearchField = ClickFnHttp(Driver, '/html/body/div/div/div/div[3]/div[1]/a/div/input', 1)

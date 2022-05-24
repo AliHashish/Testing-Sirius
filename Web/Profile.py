@@ -5,8 +5,8 @@ from selenium.webdriver.common.by import By
 # import keyboard
 from pyautogui import *
 import pyautogui
-from Utilities import ClickFnHttp
-from ProfileName import ProfileNames
+from Utilities import *
+
 #this file has been modified
 
 def ProfileTest(Driver):
@@ -98,8 +98,8 @@ def ProfileTest(Driver):
 
     BackButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 2)
     # Backbutton.click()
-    Driver.get('http://mysirius.me/profile') #doesnt want to click on back button even though it is implemented correctly by FT
-    time.sleep(3)
+    # Driver.get('http://mysirius.me/profile') #doesnt want to click on back button even though it is implemented correctly by FT
+    # time.sleep(3)
 
     Followers = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[2]/span', 2)
     # Followers = Driver.find_element(by=By.XPATH,value = '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[2]/span')
@@ -119,10 +119,12 @@ def ProfileTest(Driver):
 
     BackButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 1)
     # Backbutton.click()
-    Driver.get('http://mysirius.me/profile')  # doesnt want to click on back button even though it is implemented correctly by FT
-    time.sleep(2)
+    # Driver.get('http://mysirius.me/profile')  # doesnt want to click on back button even though it is implemented correctly by FT
+    time.sleep(4)
 
     #test unfollow and follow
+    Followers = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[2]/span', 2)
+
     FollowButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[2]/button', 2)
 
     FollowingTab = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div/div/a[2]/button', 2)
@@ -166,9 +168,260 @@ def ProfileTest(Driver):
     time.sleep(2)
 
     ProfileNames(Driver)
-    # ProfileNames(Driver,0)
-    # ProfileNames(Driver,1)
+    # # ProfileNames(Driver,0)
+    # # ProfileNames(Driver,1)
 
+    ProfileBio(Driver)
+    # ProfileBio(Driver,0)
+    # ProfileBio(Driver,1)
 
+    ProfileCountry(Driver)
+    # ProfileCountry(Driver,0)
+    # ProfileCountry(Driver,1)
 
+    ProfileCity(Driver)
+    # ProfileCity(Driver,0)
+    # ProfileCity(Driver,1)
 
+    ##Make big window
+
+    follow = ClickFnHttp(Driver, '/html/body/div/div/div/div[3]/div[3]/div/div[1]/div/button', 2)
+
+    follow = ClickFnHttp(Driver, '/html/body/div/div/div/div[3]/div[3]/div/div[2]/div/button', 2)
+
+    follow = ClickFnHttp(Driver, '/html/body/div/div/div/div[3]/div[3]/div/div[3]/div/button', 2)
+
+    follow = ClickFnHttp(Driver, '/html/body/div/div/div/div[3]/div[3]/div/div[1]/div/button', 2)
+
+    unfollow = ClickFnHttp(Driver, '/html/body/div/div/div/div[3]/div[3]/div/div[1]/div/button', 2)
+
+    Cancel = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/button[2]', 2)
+
+    Confirm = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/button[1]', 2)
+
+    #check following
+    Followings = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[3]/div[3]/a[1]', 2)
+
+    BackButton = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[1]/div/a', 1)
+
+    # tweet from profile
+    ProfileTweet(Driver)
+
+def ProfileNames(Driver, Mode = 1):
+    if Mode==0:
+        F = open('../TestCases/Names.txt', 'r')
+        names = [Name.rstrip('\n') for Name in F.readlines()]
+        F.close()
+        time.sleep(2)
+
+        for name in names:
+            i = 2
+            EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+            while(i>=0):
+                pyautogui.press("down")
+                i-=1
+
+            # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
+            NameField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[1]/input').clear()
+            NameField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', name, 2)
+
+            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+
+            Driver.get('http://mysirius.me/user7')
+            time.sleep(1)
+    else:
+        F = open('../TestCases/Names.txt', 'r')
+        Name = (F.readline()).rstrip('\n')
+        F.close()
+        time.sleep(2)
+
+        i = 2
+        EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+        while (i >= 0):
+            pyautogui.press("down")
+            i -= 1
+
+        # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
+        NameField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[1]/input').clear()
+        NameField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', Name, 2)
+
+        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+
+        Driver.get('http://mysirius.me/user7')
+        time.sleep(1)
+
+def ProfileBio(Driver, Mode = 1):
+    if Mode==0:
+        F = open('../TestCases/Bios.txt', 'r')
+        Bios = [Bio.rstrip('\n') for Bio in F.readlines()]
+        F.close()
+        time.sleep(2)
+
+        for Bio in Bios:
+            i = 3
+            EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+            while(i>=0):
+                pyautogui.press("down")
+                i-=1
+            time.sleep(1)
+            # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
+            BioField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[2]/input').clear()
+            BioField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[2]/input', Bio, 2)
+
+            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+
+            Driver.get('http://mysirius.me/user7')
+            time.sleep(1)
+    else:
+        F = open('../TestCases/Bios.txt', 'r')
+        Bio = (F.readline()).rstrip('\n')
+        F.close()
+        time.sleep(2)
+        i=3
+        EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+
+        EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+        while (i >= 0):
+            pyautogui.press("down")
+            i -= 1
+        time.sleep(2)
+        # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
+        BioField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[2]/input').clear()
+        BioField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[2]/input', Bio, 2)
+
+        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+
+        Driver.get('http://mysirius.me/user7')
+        time.sleep(2)
+
+def ProfileCountry(Driver, Mode = 1):
+    if Mode==0:
+        F = open('../TestCases/Country.txt', 'r')
+        Countries = [Country.rstrip('\n') for Country in F.readlines()]
+        F.close()
+        time.sleep(2)
+
+        for Country in Countries:
+            i = 3
+            EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+            while(i>=0):
+                pyautogui.press("down")
+                i-=1
+            time.sleep(1)
+            CountryField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[3]/input').clear()
+            CountryField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[3]/input', Country, 2)
+            time.sleep(2)
+            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+
+            Driver.get('http://mysirius.me/user7')
+            time.sleep(2)
+    else:
+        F = open('../TestCases/Country.txt', 'r')
+        Country = (F.readline()).rstrip('\n')
+        F.close()
+        time.sleep(2)
+        i = 3
+        EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+        while (i >= 0):
+            pyautogui.press("down")
+            i -= 1
+        time.sleep(1)
+        CountryField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[3]/input').clear()
+        CountryField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[3]/input', Country, 2)
+
+        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+
+        Driver.get('http://mysirius.me/user7')
+        time.sleep(2)
+
+def ProfileCity(Driver, Mode = 1):
+    if Mode==0:
+        F = open('../TestCases/City.txt', 'r')
+        Cities = [City.rstrip('\n') for City in F.readlines()]
+        F.close()
+        time.sleep(2)
+
+        for City in Cities:
+            i = 4
+            EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+            while(i>=0):
+                pyautogui.press("down")
+                i-=1
+            time.sleep(1)
+            CityField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[4]/input').clear()
+            CityField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[4]/input', City, 2)
+            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+
+            Driver.get('http://mysirius.me/user7')
+            time.sleep(2)
+    else:
+        F = open('../TestCases/City.txt', 'r')
+        City = (F.readline()).rstrip('\n')
+        F.close()
+        time.sleep(2)
+
+        i = 4
+        EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+        while (i >= 0):
+            pyautogui.press("down")
+            i -= 1
+        time.sleep(1)
+        CityField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[4]/input').clear()
+        CityField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[4]/input', City, 2)
+        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+
+        Driver.get('http://mysirius.me/user7')
+        time.sleep(2)
+
+def ProfileTweet(Driver, Mode = 1):
+    i = 1
+    if Mode == 0:
+        F = open('../TestCases/TweetTestCases.txt', 'r')
+        Quotes = [tweet.rstrip('\n') for tweet in F.readlines()]
+        F.close()
+        time.sleep(2)
+        for quote in Quotes:
+            Tweet = ClickFnHttp(Driver, '/html/body/div/div/div/div[1]/div[1]/div/button', 2)
+            TweetField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div/div/div[3]/div[1]/div/textarea[1]', quote, 2)
+            if len(quote) > 0 and len(quote) <= 280:
+                TweetButton = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div/div/div[3]/div[2]/div[3]/div/button', 2)
+                print("Tweeted: ", i)
+                i += 1
+                time.sleep(2)
+                Close = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div/div/div[1]', 2)
+            else:
+                print("cant tweet empty tweet nor larger than 281 char!! im the quote = ", quote)
+            time.sleep(2)
+        Driver.get('http://mysirius.me/user7')
+        time.sleep(2)
+        TweetAndRetweetField = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[4]/div/div/div/a[2]/button', 1)
+        TweetsField = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[4]/div/div/div/a[1]/button', 1)
+        Driver.get('http://mysirius.me/home')
+        time.sleep(2)
+        Driver.get('http://mysirius.me/user7')
+        time.sleep(2)
+    else:
+        F = open('../TestCases/TweetTestCases.txt', 'r')
+        Quotes = (F.readline()).rstrip('\n')
+        F.close()
+        time.sleep(2)
+
+    Tweet = ClickFnHttp(Driver, '/html/body/div/div/div/div[1]/div[1]/div/button', 2)
+    TweetField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div/div/div[3]/div[1]/div/textarea[1]', Quotes, 2)
+    if len(Quotes) > 0 and len(Quotes) <= 280:
+        TweetButton = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div/div/div[3]/div[2]/div[3]/div/button', 2)
+        print("Tweeted: ", i)
+        i += 1
+        time.sleep(2)
+        Close = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div/div/div[1]', 2)
+    else:
+        print("cant tweet empty tweet nor larger than 281 char!! im the quote = ", Quotes)
+    time.sleep(1)
+    Driver.get('http://mysirius.me/user7')
+    time.sleep(2)
+    TweetAndRetweetField = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[4]/div/div/div/a[2]/button', 1)
+    TweetsField = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[4]/div/div/div/a[1]/button', 1)
+    Driver.get('http://mysirius.me/home')
+    time.sleep(2)
+    Driver.get('http://mysirius.me/user7')
+    time.sleep(2)

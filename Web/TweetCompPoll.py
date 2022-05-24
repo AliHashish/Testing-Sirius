@@ -11,7 +11,7 @@ def TweetCompPoll(Driver, Mode = 1):
     # namely, the first element
 
     time.sleep(1)
-    Driver.get('http://34.236.108.123/home')
+    Driver.get('http://mysirius.me/home')
     time.sleep(3)
     # The default is testing the whole process
 
@@ -40,7 +40,7 @@ def TweetCompPoll(Driver, Mode = 1):
                 print("Choice 2: ", Choice2Text)
 
                 time.sleep(1)
-                Driver.get('http://34.236.108.123/home')
+                Driver.get('http://mysirius.me/home')
                 time.sleep(1)
 
                 Poll = Driver.find_element(by=By.XPATH, value=
@@ -117,7 +117,7 @@ def TweetCompPoll(Driver, Mode = 1):
                 print("Choice 3: ", Choice3Text)
 
                 time.sleep(1)
-                Driver.get('http://34.236.108.123/home')
+                Driver.get('http://mysirius.me/home')
                 time.sleep(1)
 
 
@@ -216,7 +216,7 @@ def TweetCompPoll(Driver, Mode = 1):
                 print("Choice 4: ", Choice4Text)
 
                 time.sleep(1)
-                Driver.get('http://34.236.108.123/home')
+                Driver.get('http://mysirius.me/home')
                 time.sleep(1)
 
                 Poll = Driver.find_element(by=By.XPATH, value=
@@ -374,11 +374,3 @@ def TweetCompPoll(Driver, Mode = 1):
         time.sleep(1)
         Confirm.click()
         time.sleep(1)
-
-
-
-
-
-
-
-
