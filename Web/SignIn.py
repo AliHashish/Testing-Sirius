@@ -62,7 +62,7 @@ def SignIn(Driver, Mode = 1):
                     # time.sleep(1)
                     PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 2)  # Writes the password in the password field
                     time.sleep(1)
-                    LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[3]', 2)
+                    LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[2]', 2)
 
 
                     time.sleep(2)
@@ -96,5 +96,5 @@ def SignIn(Driver, Mode = 1):
         time.sleep(1)
         PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 2)  # Writes the password in the password field
         time.sleep(3)
-        LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[3]', 2)
+        LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[2]', 2)
         time.sleep(2)
