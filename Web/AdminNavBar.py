@@ -2,12 +2,16 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 from selenium.webdriver.common.by import By
-
+from Utilities import *
 
 def AdminNavBar(Driver):
     # Driver = webdriver.Firefox(executable_path=r'..\..\..\gecko\geckodriver.exe')
-    Driver.get('http://34.236.108.123/adminView/dashboard')  # Goes to Admin page
-    time.sleep(3)
+    # Driver.get('http://mysirius.me/admin/dashboard')  # Goes to Admin page
+    # time.sleep(3)
+    Driver.get('http://mysirius.me/home')  # Goes to home page
+    time.sleep(1)
+    SwitchToAdmin = ClickFnHttp(Driver, "/html/body/div/div/div/div[1]/div[1]/div/div[2]/a/button")
+
     Users = Driver.find_element(by=By.XPATH, value=
         '/html/body/div/div/div/div[1]/div[2]/a[2]/div/h4')
     time.sleep(1)

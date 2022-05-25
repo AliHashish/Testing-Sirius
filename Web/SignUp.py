@@ -13,7 +13,7 @@ def SignUp(Driver, Mode = 1):
     # if Mode = 1, then we will test the whole process with a specific element
     # namely, the first element
 
-    Driver.get('http://mysirius.me/signup')  # Goes to sign in page
+    Driver.get('http://mysirius.me/signup')  # Goes to sign up page
     time.sleep(1)
 
     # The default is testing the whole process

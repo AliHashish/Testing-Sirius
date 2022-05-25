@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from Utilities import ClickFnHttp
 
 def NavBar(Driver):
-
+    Driver.get('http://mysirius.me/home')
     Explore = ClickFnHttp(Driver, '/html/body/div/div/div/div[1]/div[1]/div/a[3]/div', 1)
     # Explore = Driver.find_element(by=By.XPATH, value=
     #             '/html/body/div/div/div/div[1]/div/a[3]/div')

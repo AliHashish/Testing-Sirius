@@ -7,6 +7,7 @@ from selenium.webdriver.common.by import By
 from pyautogui import *
 import pyautogui
 from Utilities import *
+# import os
 
 #this file has been modified
 
@@ -166,18 +167,25 @@ def ProfileTest(Driver, Mode = 1):
     time.sleep(2)
 
     try:
+
         achain = ActionChains(Driver)
         profilePhoto = Driver.find_element(by=By.XPATH,value='/html/body/div[2]/div[3]/div[2]/div[2]/div')
         achain.context_click(profilePhoto).perform()
-        time.sleep(5)
+        time.sleep(2)
         Edit = Driver.find_element(by=By.XPATH, value='/html/body/div[3]/div[3]/ul/li[1]/input')
+        # Abdo's absolute path:
         # Edit.send_keys('D:/GAM3A/3-Junior/JUNIOR-2/Software/TESTING GITGUB/Testing-Sirius/Image/test.jpg')
-        Edit.send_keys('../Image/test.jpg')
-        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+        # Hashish's absolute path:
+        Edit.send_keys('D:/Ali kolya/Ali Year 2/Projects & Assignments/Term 2/Software/Project/Project/Testing-Sirius/Image/test.jpg')
+        # Relative path
+        # Edit.send_keys('../Image/test.jpg')
+        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 1)
         Driver.get('http://mysirius.me/user7')
         time.sleep(2)
     except:
         print("Element not found.")
+        print("Invalid path")
+        time.sleep(1)
 
     # Driver.get('http://mysirius.me/profile')
     # time.sleep(2)
