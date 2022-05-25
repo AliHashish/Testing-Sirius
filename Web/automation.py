@@ -2,6 +2,7 @@ from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 from selenium.webdriver.common.by import By
+from SignUp import SignUp
 from SignIn import SignIn
 from NavBar import NavBar
 from Notifications import Notifications
@@ -35,10 +36,15 @@ Driver = webdriver.Chrome(ChromeDriverManager().install()) # uses google chrome
 #Register(Driver, 0)  # Registers using the focused testing mode
 
 
-
+time.sleep(1)
 Driver.get('http://mysirius.me/')
 
-# time.sleep(3)
+time.sleep(3)
+# SignUp(Driver)  # Signs up using the default testing mode
+# SignUp(Driver, 1)  # Signs up using the default testing mode
+# SignUp(Driver, 0)  # Signs up using the focused testing mode
+
+time.sleep(3)
 SignIn(Driver)  # Signs in using the default testing mode                       #SIGING IN READY
 # SignIn(Driver, 1)  # Signs in using the default testing mode
 # SignIn(Driver, 0)  # Signs in using the focused testing mode

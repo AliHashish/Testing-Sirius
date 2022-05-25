@@ -229,11 +229,13 @@ def ProfileNames(Driver, Mode = 1):
                 i-=1
 
             # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
-            NameField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[1]/input').clear()
-            NameField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', name, 2)
+            try:
+                NameField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[1]/input').clear()
+                NameField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', name, 2)
 
-            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
-
+                Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            except:
+                print("Element not found.")
             Driver.get('http://mysirius.me/user7')
             time.sleep(1)
     else:
@@ -247,12 +249,14 @@ def ProfileNames(Driver, Mode = 1):
         while (i >= 0):
             pyautogui.press("down")
             i -= 1
+        try:
+            # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
+            NameField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[1]/input').clear()
+            NameField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', Name, 2)
 
-        # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
-        NameField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[1]/input').clear()
-        NameField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', Name, 2)
-
-        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+        except:
+            print("Element not found.")
 
         Driver.get('http://mysirius.me/user7')
         time.sleep(1)
@@ -271,11 +275,14 @@ def ProfileBio(Driver, Mode = 1):
                 pyautogui.press("down")
                 i-=1
             time.sleep(1)
-            # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
-            BioField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[2]/input').clear()
-            BioField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[2]/input', Bio, 2)
+            try:
+                # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
+                BioField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[2]/input').clear()
+                BioField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[2]/input', Bio, 2)
 
-            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+                Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            except:
+                print("Element not found.")
 
             Driver.get('http://mysirius.me/user7')
             time.sleep(1)
@@ -293,10 +300,13 @@ def ProfileBio(Driver, Mode = 1):
             i -= 1
         time.sleep(2)
         # NameField = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[1]/input', 1)
-        BioField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[2]/input').clear()
-        BioField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[2]/input', Bio, 2)
+        try:
+            BioField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[2]/input').clear()
+            BioField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[2]/input', Bio, 2)
 
-        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+        except:
+            print("Element not found.")
 
         Driver.get('http://mysirius.me/user7')
         time.sleep(2)
@@ -315,10 +325,13 @@ def ProfileCountry(Driver, Mode = 1):
                 pyautogui.press("down")
                 i-=1
             time.sleep(1)
-            CountryField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[3]/input').clear()
-            CountryField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[3]/input', Country, 2)
-            time.sleep(2)
-            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            try:
+                CountryField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[3]/input').clear()
+                CountryField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[3]/input', Country, 2)
+                time.sleep(2)
+                Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            except:
+                print("Element not found.")
 
             Driver.get('http://mysirius.me/user7')
             time.sleep(2)
@@ -333,10 +346,13 @@ def ProfileCountry(Driver, Mode = 1):
             pyautogui.press("down")
             i -= 1
         time.sleep(1)
-        CountryField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[3]/input').clear()
-        CountryField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[3]/input', Country, 2)
+        try:
+            CountryField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[3]/input').clear()
+            CountryField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[3]/input', Country, 2)
 
-        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+        except:
+            print("Element not found.")
 
         Driver.get('http://mysirius.me/user7')
         time.sleep(2)
@@ -355,9 +371,12 @@ def ProfileCity(Driver, Mode = 1):
                 pyautogui.press("down")
                 i-=1
             time.sleep(1)
-            CityField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[4]/input').clear()
-            CityField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[4]/input', City, 2)
-            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            try:
+                CityField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[4]/input').clear()
+                CityField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[4]/input', City, 2)
+                Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+            except:
+                print("Element not found.")
 
             Driver.get('http://mysirius.me/user7')
             time.sleep(2)
@@ -373,9 +392,12 @@ def ProfileCity(Driver, Mode = 1):
             pyautogui.press("down")
             i -= 1
         time.sleep(1)
-        CityField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[4]/input').clear()
-        CityField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[4]/input', City, 2)
-        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+        try:
+            CityField = Driver.find_element(by=By.XPATH, value='/html/body/div[2]/div[3]/div[3]/div[4]/input').clear()
+            CityField = SendKeysFnHttp(Driver, '/html/body/div[2]/div[3]/div[3]/div[4]/input', City, 2)
+            Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+        except:
+            print("Element not found.")
 
         Driver.get('http://mysirius.me/user7')
         time.sleep(2)

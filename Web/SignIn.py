@@ -13,7 +13,7 @@ def SignIn(Driver, Mode = 1):
     # namely, the first element
 
     Driver.get('http://mysirius.me/signin')  # Goes to sign in page
-    time.sleep(2)
+    time.sleep(1)
 
     # The default is testing the whole process
 
@@ -54,15 +54,15 @@ def SignIn(Driver, Mode = 1):
                     # '/html/body/div/div/div/div/form/span/i')
 
                     if (i%2 == 0):
-                        time.sleep(2)
-                        ShowPassword = ClickFnHttp(Driver, '/html/body/div/div/div/form/span/i', 2)
+                        time.sleep(1)
+                        ShowPassword = ClickFnHttp(Driver, '/html/body/div/div/div/form/span/i', 1)
 
                     time.sleep(1)
-                    EmailField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[1]', Email, 2)  # Writes the email in the email field
+                    EmailField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[1]', Email, 1)  # Writes the email in the email field
                     # time.sleep(1)
-                    PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 2)  # Writes the password in the password field
+                    PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 1)  # Writes the password in the password field
                     time.sleep(1)
-                    LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[2]', 2)
+                    LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[3]', 1)
 
 
                     time.sleep(2)
@@ -92,9 +92,9 @@ def SignIn(Driver, Mode = 1):
         # '/html/body/div/div/div/div/form/button[3]')
 
         time.sleep(1)
-        EmailField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[1]', Email, 2)   # Writes the email in the email field
+        EmailField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[1]', Email, 1)   # Writes the email in the email field
         time.sleep(1)
-        PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 2)  # Writes the password in the password field
+        PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 1)  # Writes the password in the password field
         time.sleep(3)
-        LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[2]', 2)
+        LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[2]', 1)
         time.sleep(2)
