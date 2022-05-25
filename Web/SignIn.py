@@ -95,6 +95,6 @@ def SignIn(Driver, Mode = 1):
         EmailField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[1]', Email, 1)   # Writes the email in the email field
         time.sleep(1)
         PasswordField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[2]', Password, 1)  # Writes the password in the password field
+        time.sleep(3)
+        LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[2]', 1)
         time.sleep(2)
-        LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[3]', 1)
-        time.sleep(1)

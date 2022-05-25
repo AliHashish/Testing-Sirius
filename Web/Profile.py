@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver import ActionChains
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 from selenium.webdriver.common.by import By
@@ -157,13 +158,27 @@ def ProfileTest(Driver, Mode = 1):
     # # MoreSettingsButton = Driver.find_element(by=By.XPATH,value = '//*[@id="root"]/div/div/div[2]/div[1]/div[2]/div[3]/div/button[1]')
     # # MoreSettingsButton.click()
     # # time.sleep(2)
-    #
-    # EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
-    # pyautogui.press("down")
-    # time.sleep(2)
-    # pyautogui.press("up")
-    # time.sleep(2)
-    #
+
+    EditProfile = ClickFnHttp(Driver, '/html/body/div/div/div/div[2]/div[1]/div[2]/div[3]/div/button', 2)
+    pyautogui.press("down")
+    time.sleep(2)
+    pyautogui.press("up")
+    time.sleep(2)
+
+    try:
+        achain = ActionChains(Driver)
+        profilePhoto = Driver.find_element(by=By.XPATH,value='/html/body/div[2]/div[3]/div[2]/div[2]/div')
+        achain.context_click(profilePhoto).perform()
+        time.sleep(5)
+        Edit = Driver.find_element(by=By.XPATH, value='/html/body/div[3]/div[3]/ul/li[1]/input')
+        # Edit.send_keys('D:/GAM3A/3-Junior/JUNIOR-2/Software/TESTING GITGUB/Testing-Sirius/Image/test.jpg')
+        Edit.send_keys('../Image/test.jpg')
+        Save = ClickFnHttp(Driver, '/html/body/div[2]/div[3]/div[1]/button', 2)
+        Driver.get('http://mysirius.me/user7')
+        time.sleep(2)
+    except:
+        print("Element not found.")
+
     # Driver.get('http://mysirius.me/profile')
     # time.sleep(2)
 
@@ -171,7 +186,7 @@ def ProfileTest(Driver, Mode = 1):
 
     # ProfileBio(Driver, Mode)
 
-    ProfileCountry(Driver, Mode)
+    # ProfileCountry(Driver, Mode)
 
     # ProfileCity(Driver, Mode)
 
