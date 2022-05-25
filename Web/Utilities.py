@@ -3,56 +3,56 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
-def ClickFnHttp(Driver,http,T): #should pass http as string parameter
+def ClickFnHttp(Driver,http,DelayTime = 1): #should pass http as string parameter
     try:
         button = Driver.find_element(by=By.XPATH,value=http)
-        time.sleep(T)
+        time.sleep(DelayTime)
         button.click()
-        time.sleep(T)
+        time.sleep(DelayTime)
     except:
         print("Element not found.")
 
-def ClickFnID(Driver,ID,T): #pass ID of button
+def ClickFnID(Driver,ID,DelayTime = 1): #pass ID of button
     try:
         button = Driver.find_element(by=By.ID, value=ID)
-        time.sleep(T)
+        time.sleep(DelayTime)
         button.click()
-        time.sleep(T)
+        time.sleep(DelayTime)
     except:
         print("Element not found.")
 
-def SendKeysFnHttp(Driver,http,value,T):
+def SendKeysFnHttp(Driver,http,value,DelayTime = 1):
     try:
         button = Driver.find_element(by=By.XPATH, value=http)
-        time.sleep(T)
+        time.sleep(DelayTime)
         button.send_keys(value)
-        time.sleep(T)
+        time.sleep(DelayTime)
     except:
         print("Element not found.")
 
-def SendKeysFnID(Driver,ID,value,T):
+def SendKeysFnID(Driver,ID,value,DelayTime = 1):
     try:
         button = Driver.find_element(by=By.ID, value=ID)
-        time.sleep(T)
+        time.sleep(DelayTime)
         button.send_keys(value)
-        time.sleep(T)
+        time.sleep(DelayTime)
     except:
         print("Element not found.")
 
-def SelectFnHttp(Driver,http,index,T):
+def SelectFnHttp(Driver,http,index,DelayTime = 1):
     try:
         Field = Select(Driver.find_element(by=By.XPATH, value=http))
-        time.sleep(T)
+        time.sleep(DelayTime)
         Field.select_by_index(index)
-        time.sleep(T)
+        time.sleep(DelayTime)
     except:
         print("Element not found.")
 
-def SelectFnHttp(Driver,ID,index,T):
+def SelectFnHttp(Driver,ID,index,DelayTime = 1):
     try:
         Field = Select(Driver.find_element(by=By.ID, value=ID))
-        time.sleep(T)
+        time.sleep(DelayTime)
         Field.select_by_index(index)
-        time.sleep(T)
+        time.sleep(DelayTime)
     except:
         print("Element not found.")
