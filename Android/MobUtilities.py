@@ -24,6 +24,7 @@ def ClickFnID(Driver,ID,T): #pass ID of button
 def SendKeysFnHttp(Driver,http,value,T):
     try:
         button = Driver.find_element(by=By.XPATH, value=http)
+        button.click()
         time.sleep(T)
         button.send_keys(value)
         time.sleep(T)
@@ -33,6 +34,7 @@ def SendKeysFnHttp(Driver,http,value,T):
 def SendKeysFnID(Driver,ID,value,T):
     try:
         button = Driver.find_element(by=By.ID, value=ID)
+        button.click()
         time.sleep(T)
         button.send_keys(value)
         time.sleep(T)
@@ -48,7 +50,7 @@ def SelectFnHttp(Driver,http,index,T):
     except:
         print("Element not found.")
 
-def SelectFnHttp(Driver,ID,index,T):
+def SelectFnID(Driver,ID,index,T):
     try:
         Field = Select(Driver.find_element(by=By.ID, value=ID))
         time.sleep(T)
