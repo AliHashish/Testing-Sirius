@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
-def ClickFnHttp(Driver,http,T): #should pass http as string parameter
+def ClickFnHttp(Driver,http,T=1): #should pass http as string parameter
     try:
         button = Driver.find_element(by=By.XPATH,value=http)
         time.sleep(T)
@@ -12,7 +12,7 @@ def ClickFnHttp(Driver,http,T): #should pass http as string parameter
     except:
         print("Element not found.")
 
-def ClickFnID(Driver,ID,T): #pass ID of button
+def ClickFnID(Driver,ID,T=1): #pass ID of button
     try:
         button = Driver.find_element(by=By.ID, value=ID)
         time.sleep(T)
@@ -21,7 +21,7 @@ def ClickFnID(Driver,ID,T): #pass ID of button
     except:
         print("Element not found.")
 
-def SendKeysFnHttp(Driver,http,value,T):
+def SendKeysFnHttp(Driver,http,value,T=1):
     try:
         button = Driver.find_element(by=By.XPATH, value=http)
         button.click()
@@ -31,7 +31,7 @@ def SendKeysFnHttp(Driver,http,value,T):
     except:
         print("Element not found.")
 
-def SendKeysFnID(Driver,ID,value,T):
+def SendKeysFnID(Driver,ID,value,T=1):
     try:
         button = Driver.find_element(by=By.ID, value=ID)
         button.click()
@@ -41,7 +41,7 @@ def SendKeysFnID(Driver,ID,value,T):
     except:
         print("Element not found.")
 
-def SelectFnHttp(Driver,http,index,T):
+def SelectFnHttp(Driver,http,index,T=1):
     try:
         Field = Select(Driver.find_element(by=By.XPATH, value=http))
         time.sleep(T)
@@ -50,7 +50,7 @@ def SelectFnHttp(Driver,http,index,T):
     except:
         print("Element not found.")
 
-def SelectFnID(Driver,ID,index,T):
+def SelectFnID(Driver,ID,index,T=1):
     try:
         Field = Select(Driver.find_element(by=By.ID, value=ID))
         time.sleep(T)

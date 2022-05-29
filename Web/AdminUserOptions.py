@@ -30,7 +30,7 @@ def AdminUserOptions(Driver):
 
     time.sleep(1)
     Driver.get('http://mysirius.me/admin/user')  # Goes to Admin user page
-    time.sleep(1)
+    time.sleep(10)
     SomeUserReport = ClickFnHttp(Driver, "/html/body/div/div/div/div[2]/div/div[27]/div/div[4]/a")
 
     ReturnToUser = ClickFnHttp(Driver, "/html/body/div/div/div/div[1]/div/div[3]/a/button")

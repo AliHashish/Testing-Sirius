@@ -50,6 +50,10 @@ time.sleep(1)
 SignIn(Driver)  # Signs in using the default testing mode
 ###### SignIn(Driver, 1)  # Signs in using the default testing mode
 ###### SignIn(Driver, 0)  # Signs in using the focused testing mode
+time.sleep(4)
+Driver.get('http://mysirius.me/home')
+time.sleep(4)
+Driver.get('http://mysirius.me/home')
 
 InfiniteScroll(Driver)
 
@@ -70,12 +74,20 @@ LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[2]', 1)
 
 # ##### time.sleep(1)
 # ##### AdminNavBar(Driver)
+time.sleep(4)
+Driver.get('http://mysirius.me/home')
+time.sleep(4)
+Driver.get('http://mysirius.me/home')
 
 time.sleep(1)
 AdminUserOptions(Driver)
 
 time.sleep(1)
 SignIn(Driver)  # Signs in using the default testing mode
+time.sleep(4)
+Driver.get('http://mysirius.me/home')
+time.sleep(4)
+Driver.get('http://mysirius.me/home')
 
 time.sleep(1)
 NavBar(Driver)             # Tests the Navigation Bar                                 #READY
@@ -128,6 +140,11 @@ time.sleep(1)
 LoginButton = ClickFnHttp(Driver, '/html/body/div/div/div/form/button[2]', 1)
 time.sleep(1)
 Settings(Driver)
+
+time.sleep(4)
+Driver.get('http://mysirius.me/home')
+time.sleep(4)
+Driver.get('http://mysirius.me/home')
 
 time.sleep(1)
 ForgotPassword(Driver)

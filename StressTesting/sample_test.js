@@ -10,27 +10,27 @@ export let options = {
     },
     stages: [
         // Below average load
-        { duration: '20s', target: 80 },  // raises users from 0 to 50 in 2 minutes
-        { duration: '20s', target: 80 },  // keeps users at that number for 5 minutes
+        { duration: '20s', target: 80 },  // raises users from 0 to 80 in 20 seconds
+        { duration: '20s', target: 80 },  // keeps users at that number for 20 seconds
 
         // Average load        
-        { duration: '20s', target: 120 },  // raises users from 50 to 150 in 2 minutes
-        { duration: '20s', target: 120 },  // keeps users at that number for 5 minutes
+        { duration: '20s', target: 120 },  // raises users from 80 to 120 in 20 seconds
+        { duration: '20s', target: 120 },  // keeps users at that number for 20 seconds
 
         // Server starts giving errors at around 140-150
 
         // Above average load (server about to shut down)
-        { duration: '20s', target: 175 },  // raises users from 150 to 250 in 2 minutes
-        { duration: '20s', target: 175 },  // keeps users at that number for 5 minutes
+        { duration: '20s', target: 175 },  // raises users from 120 to 175 in 20 seconds
+        { duration: '20s', target: 175 },  // keeps users at that number for 20 seconds
 
         // // This is even going further beyond
-        { duration: '20s', target: 200 },  // raises users from 150 to 250 in 2 minutes
-        { duration: '20s', target: 200 },  // keeps users at that number for 5 minutes
+        { duration: '20s', target: 200 },  // raises users from 175 to 200 in 20 seconds
+        { duration: '20s', target: 200 },  // keeps users at that number for 20 seconds
 
         // Recovery stage
         { duration: '3m', target: 0 },  // returns to 0 users.
 
-        // ebtada yedrab 3nd 250
+        // ebtada yedrab 3nd 145 mthln
     ],
 };
 
@@ -40,6 +40,7 @@ const requestHeaders = {
         // 'Authorization': 'Bearer ' +'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyNjg4ZWM5OWEzNjc3NWIzNDZlNmEyZCIsImlhdCI6MTY1MTAyMDMwNSwiZXhwIjoxNjU5NjYwMzA1fQ.nQusm1ETvwgOFceFbqu_BAG8F_uorveWD2LCGprh8pc', // dh el token bta3 user 0
         'Authorization': 'Bearer ' +'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOGQ5NzUwNGUyNjA1NzJjZGEzYWFlMyIsImlhdCI6MTY1MzQ0NjU0MywiZXhwIjoxNjYyMDg2NTQzfQ.c4KeGfQmkpir4L-nmPJpMgANjmhFhtXuD7LRSyoG6MU', // dh el token bta3 abosabry
 };
+// var data = '';
 
 
 export default () => {
@@ -86,6 +87,7 @@ export default () => {
         
         { method: 'POST', url: API_BASE_URL+'/forgot-password', params: { headers: requestHeaders} },
         { method: 'POST', url: API_BASE_URL+'/home/retweet', params: { headers: requestHeaders} },
+        ///////////{ method: 'POST', url: API_BASE_URL+'/home/retweet', params: { headers: requestHeaders}, data: data },
         { method: 'POST', url: API_BASE_URL+'/home/reply', params: { headers: requestHeaders} },
         { method: 'POST', url: API_BASE_URL+'/home/:tweetId/makePollChoice', params: { headers: requestHeaders} },
 

@@ -138,7 +138,7 @@ def SignUp(Driver, Mode = 1):
         F.close()
 
         try:
-            ExtraChar = '1'
+            ExtraChar = '001'
             time.sleep(1)
             NameField = SendKeysFnHttp(Driver, '/html/body/div/div/div/form/input[1]', Name + ExtraChar,
                                        1)  # Writes the name in the name field
